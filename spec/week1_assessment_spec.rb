@@ -95,29 +95,29 @@ describe BattleBot do
     end
 
 
-    describe '.count' do
-      it 'returns 0 if no bots have been created' do
-        expect(BattleBot.count).to eq(0)
-      end
+    # describe '.count' do
+    #   it 'returns 0 if no bots have been created' do
+    #     expect(BattleBot.count).to eq(0)
+    #   end
 
-      it 'returns 1 if one bot has been created' do
-        bot
-        expect(BattleBot.count).to eq(1)
-      end
+    #   it 'returns 1 if one bot has been created' do
+    #     bot
+    #     expect(BattleBot.count).to eq(1)
+    #   end
 
-      it 'returns 2 if one bot has been created' do
-        bot
-        bot2
-        expect(BattleBot.count).to eq(2)
-      end
+    #   it 'returns 2 if one bot has been created' do
+    #     bot
+    #     bot2
+    #     expect(BattleBot.count).to eq(2)
+    #   end
 
-      it 'returns only the number of LIVING bots' do
-        bot
-        bot2.take_damage(100)
-        expect(BattleBot.count).to eq(1)
-      end
+    #   it 'returns only the number of LIVING bots' do
+    #     bot
+    #     bot2.take_damage(100)
+    #     expect(BattleBot.count).to eq(1)
+    #   end
 
-    end
+    # end
 
     describe "doing battle" do
 
@@ -188,7 +188,7 @@ describe BattleBot do
 
 
     describe '#enemies' do
-      let(:bot3){ Bot.new "BazBot"}
+      let(:bot3){ BattleBot.new "BazBot"}
 
       it 'starts returning a blank array' do
         expect(bot.enemies).to eq([])
